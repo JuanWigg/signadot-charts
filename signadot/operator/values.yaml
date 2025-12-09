@@ -88,6 +88,27 @@ controllerManager:
       memory: 512Mi
   # image: my-private-registry/signadot/operator:latest
   # imagePullPolicy: Always
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/arch
+  #         operator: In
+  #         values:
+  #         - amd64
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #   - weight: 100
+  #     preference:
+  #       matchExpressions:
+  #       - key: node-role.kubernetes.io/control-plane
+  #         operator: In
+  #         values:
+  #         - ""
+  # tolerations:
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
 
 agent:
   resources:
@@ -97,7 +118,28 @@ agent:
       memory: 128Mi
   # image: my-private-registry/signadot/agent:latest
   # imagePullPolicy: Always
-
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/arch
+  #         operator: In
+  #         values:
+  #         - amd64
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #   - weight: 100
+  #     preference:
+  #       matchExpressions:
+  #       - key: node-role.kubernetes.io/control-plane
+  #         operator: In
+  #         values:
+  #         - ""
+  # tolerations:
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
+  
 routeServer:
   resources:
     limits:
@@ -106,6 +148,27 @@ routeServer:
       memory: 128Mi
   # image: my-private-registry/signadot/route-server:latest
   # imagePullPolicy: Always
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/arch
+  #         operator: In
+  #         values:
+  #         - amd64
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #   - weight: 100
+  #     preference:
+  #       matchExpressions:
+  #       - key: node-role.kubernetes.io/control-plane
+  #         operator: In
+  #         values:
+  #         - ""
+  # tolerations:
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
 
 ioContextServer:
   replicas: 1
@@ -116,6 +179,27 @@ ioContextServer:
       memory: 128Mi
   # image: my-private-registry/signadot/io-context-server:latest
   # imagePullPolicy: Always
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/arch
+  #         operator: In
+  #         values:
+  #         - amd64
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #   - weight: 100
+  #     preference:
+  #       matchExpressions:
+  #       - key: node-role.kubernetes.io/control-plane
+  #         operator: In
+  #         values:
+  #         - ""
+  # tolerations:
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
 
 # routeInit:
 #   resources:
@@ -184,6 +268,27 @@ tunnel:
     #     maxSurge: 25%
     #     maxUnavailable: 25%
     #   type: RollingUpdate
+    # nodeAffinity:
+    #   requiredDuringSchedulingIgnoredDuringExecution:
+    #     nodeSelectorTerms:
+    #     - matchExpressions:
+    #       - key: kubernetes.io/arch
+    #         operator: In
+    #         values:
+    #         - amd64
+    #   preferredDuringSchedulingIgnoredDuringExecution:
+    #   - weight: 100
+    #     preference:
+    #       matchExpressions:
+    #       - key: node-role.kubernetes.io/control-plane
+    #         operator: In
+    #         values:
+    #         - ""
+    # tolerations:
+    # - key: "key1"
+    #   operator: "Equal"
+    #   value: "value1"
+    #   effect: "NoSchedule"
   proxy:
     replicas: 1
     resources:
@@ -198,6 +303,27 @@ tunnel:
   #       maxSurge: 25%
   #       maxUnavailable: 25%
   #     type: RollingUpdate
+    # nodeAffinity:
+    #   requiredDuringSchedulingIgnoredDuringExecution:
+    #     nodeSelectorTerms:
+    #     - matchExpressions:
+    #       - key: kubernetes.io/arch
+    #         operator: In
+    #         values:
+    #         - amd64
+    #   preferredDuringSchedulingIgnoredDuringExecution:
+    #   - weight: 100
+    #     preference:
+    #       matchExpressions:
+    #       - key: node-role.kubernetes.io/control-plane
+    #         operator: In
+    #         values:
+    #         - ""
+    # tolerations:
+    # - key: "key1"
+    #   operator: "Equal"
+    #   value: "value1"
+    #   effect: "NoSchedule"
   auditor:
     # Enable the tunnel auditor (Envoy-based sidecar for auditing and filtering tunnel traffic).
     # Automatically disabled when Istio or Linkerd is enabled, as they provide their own proxy sidecars.
@@ -262,6 +388,27 @@ trafficManager:
       memory: 128Mi
   # image: my-private-registry/signadot/traffic-manager:latest
   # imagePullPolicy: Always
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/arch
+  #         operator: In
+  #         values:
+  #         - amd64
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #   - weight: 100
+  #     preference:
+  #       matchExpressions:
+  #       - key: node-role.kubernetes.io/control-plane
+  #         operator: In
+  #         values:
+  #         - ""
+  # tolerations:
+  # - key: "key1"
+  #   operator: "Equal"
+  #   value: "value1"
+  #   effect: "NoSchedule"
 
 # jobExecutorInit:
 #   resources:

@@ -129,6 +129,15 @@ spec:
         - mountPath: /etc/signadot/
           name: signadot-config
           readOnly: true
+{{- with .Values }}{{- with .controllerManager }}{{- with .nodeAffinity }}
+      affinity:
+        nodeAffinity:
+{{ toYaml . | indent 10 }}
+{{- else -}}{{- end }}{{- else -}}{{- end }}{{- else -}}{{- end }}
+{{- with .Values }}{{- with .controllerManager }}{{- with .tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+{{- else -}}{{- end }}{{- else -}}{{- end }}{{- else -}}{{- end }}
       securityContext:
         runAsNonRoot: true
       serviceAccountName: signadot-controller-manager

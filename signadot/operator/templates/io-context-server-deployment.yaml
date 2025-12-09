@@ -51,4 +51,13 @@ spec:
         resources:
 {{ toYaml . | indent 10 }}
 {{- else -}}{{- end }}{{- else -}}{{- end }}{{- else -}}{{- end }}
+{{- with .Values }}{{- with .ioContextServer }}{{- with .nodeAffinity }}
+      affinity:
+        nodeAffinity:
+{{ toYaml . | indent 10 }}
+{{- else -}}{{- end }}{{- else -}}{{- end }}{{- else -}}{{- end }}
+{{- with .Values }}{{- with .ioContextServer }}{{- with .tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+{{- else -}}{{- end }}{{- else -}}{{- end }}{{- else -}}{{- end }}
       serviceAccountName: io-context-server
